@@ -14,15 +14,17 @@ function updateSubtotal(product) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const allProduct = document.querySelectorAll('.product');
+  const allProduct = document.querySelectorAll('.product');   // we get a NodeList (i.e. array) of all the products
   console.log(allProduct)
   let netTotal = 0
+
+  // we loop through all the products and add the subtotal of each product to the netTotal
   for(let singleProduct of allProduct){
     let subtotal = updateSubtotal(singleProduct);
     netTotal += subtotal
   }
 
-  document.querySelector('#total-value > span').innerHTML = netTotal
+  document.querySelector('#total-value > span').innerHTML = netTotal    // set the total cost
   // end of test
 
   // ITERATION 2
